@@ -111,7 +111,9 @@ class Preferences
       
       def sound=(sound)
         @sound = sound
-        preferences.sound.send("#{@name}=", (@sound == Preferences::Sound::EMPTY_SOUND ? '' : @sound))
+        sound_name = @sound == Preferences::Sound::EMPTY_SOUND ? '' : @sound
+        preferences.sound.send("#{@name}=", sound_name)
+        SoundPlayer.play(sound_name)
       end
       # FIXME: http://www.macruby.org/trac/ticket/201
       alias_method :setSound, :sound=
