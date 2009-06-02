@@ -185,7 +185,7 @@ class AppController
     terminateWithoutConfirm(self)
   end
 
-  def windowWillReturnFieldEditor_toObject(sender, obj)
+  def windowWillReturnFieldEditor(sender, toObject:obj)
     if @view_theme && @view_theme.other
       dic = @field_editor.selectedTextAttributes.mutableCopy
       dic[NSBackgroundColorAttributeName] = @view_theme.other.input_text_sel_bgcolor

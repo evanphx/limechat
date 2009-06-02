@@ -567,7 +567,7 @@ class IRCWorld
     end
   end
 
-  def outlineView_shouldEditTableColumn_item(sender, column, item)
+  def outlineView(sender, shouldEditTableColumn:column, item:item)
     false
   end
 

@@ -91,14 +91,14 @@ class Preferences
     
     def events_wrapped
       EVENTS.map do |name, display_name|
-        SoundWrapper.alloc.initWithName_displayName_sound(name, display_name, send(name))
+        SoundWrapper.alloc.initWithName(name, displayName:display_name, sound:send(name))
       end
     end
     
     class SoundWrapper
       attr_accessor :display_name, :sound
       
-      def initWithName_displayName_sound(name, display_name, sound)
+      def initWithName(name, displayName:display_name, sound:sound)
         if init
           @name, @display_name, @sound = name, display_name, sound
           self

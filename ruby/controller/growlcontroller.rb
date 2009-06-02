@@ -103,7 +103,7 @@ class GrowlController
     @growl.notify(kind, title, desc, :click_context => context, :sticky => sticky, :priority => priority)
   end
 
-  def growlNotifier_notificationClicked(sender, context)
+  def growlNotifier(sender, notificationClicked:context)
     @owner.window.makeKeyAndOrderFront(nil)
     NSApp.activateIgnoringOtherApps(true)
     

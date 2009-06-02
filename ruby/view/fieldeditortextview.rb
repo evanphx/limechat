@@ -4,8 +4,10 @@
 class FieldEditorTextView < NSTextView
   attr_accessor :paste_delegate
   
-  def initialize
-    #@key_handler = KeyEventHandler.new
+  def initWithFrame(frame)
+    super
+    @key_handler = KeyEventHandler.new
+    self
   end
 
   def paste(sender)
@@ -16,11 +18,11 @@ class FieldEditorTextView < NSTextView
   end
   
   def register_key_handler(*args, &handler)
-    #@key_handler.register_key_handler(*args, &handler)
+    @key_handler.register_key_handler(*args, &handler)
   end
   
   def keyDown(e)
-    #return if @key_handler.process_key_event(e)
+    return if @key_handler.process_key_event(e)
     super(e)
   end
 end

@@ -41,7 +41,7 @@ class TcpServer
     @clients.clear
   end
   
-  def onSocket_didAcceptNewSocket(sock, conn)
+  def onSocket(sock, didAcceptNewSocket:conn)
     c = TcpClient.alloc.init
     c.init_with_existing_connection(conn)
     c.delegate = self

@@ -930,7 +930,7 @@ class MenuController
     @send.beginForDirectory_file_types_modelessDelegate_didEndSelector_contextInfo('~/Desktop', nil, nil, self, 'sendFilePanelDidEnd:returnCode:contextInfo:', nil)
   end
 
-  def sendFilePanelDidEnd_returnCode_contextInfo(panel, code, info)
+  def sendFilePanelDidEnd(panel, returnCode:code, contextInfo:info)
     targets = @send_targets
     uid = @send_uid
     @send_targets = nil

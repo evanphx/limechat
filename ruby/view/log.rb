@@ -647,7 +647,7 @@ class LogScriptEventSink
   end
 
   def onDblClick(e)
-    @owner.logView_onDoubleClick(e.stringValue)
+    @owner.logView_onDoubleClick(e)
   end
 
   DELTA = 3
